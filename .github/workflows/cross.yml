@@ -1,0 +1,17 @@
+name: Cross
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select the environment to deploy to"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+
+jobs:
+  cross:
+    uses: saprolings-hong/pipeline/.github/workflows/common.yml@main
